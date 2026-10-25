@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="de"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="mobile-web-app-capable" content="yes"><title>Blobs.io</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;background:#f2fbff;font-family:system-ui,sans-serif;touch-action:none;user-select:none;-webkit-user-select:none}
+canvas{position:fixed;inset:0}
+.ov{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;background:rgba(20,30,50,.55);color:#fff;text-align:center}
+.ov.hide{display:none}
+input,button{font-size:20px;padding:12px 18px;border-radius:12px;border:0}
+button.go{background:#3ddc84;color:#06310f;font-weight:700}
+.btn{position:fixed;bottom:calc(24px + env(safe-area-inset-bottom));width:76px;height:76px;border-radius:50%;background:rgba(40,60,90,.35);color:#fff;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid rgba(255,255,255,.6)}
+#split{right:28px;bottom:calc(110px + env(safe-area-inset-bottom))}#eject{right:112px}
+#hud{position:fixed;left:12px;bottom:12px;color:#234;font-weight:700;text-shadow:0 0 4px #fff}
+#lb{position:fixed;right:10px;top:10px;background:rgba(0,0,0,.35);color:#fff;padding:8px 12px;border-radius:10px;font-size:13px;min-width:130px}
+#st{position:fixed;left:10px;top:10px;color:#c00;font-weight:700}
+</style></head><body>
+<canvas id="c"></canvas>
+<div id="lb"></div><div id="hud"></div><div id="st"></div>
+<div class="btn" id="eject">Masse</div><div class="btn" id="split">Teilen</div>
+<div class="ov" id="start"><h1>Blobs.io</h1><input id="name" maxlength="16" placeholder="Dein Name"><button class="go" id="play">Spielen</button><small>Maus/Joystick: bewegen · Leertaste: teilen · W: Masse abgeben</small></div>
+<div class="ov hide" id="over"><h1>Game over</h1><div id="res"></div><button class="go" id="again">Nochmal spielen</button></div>
+<script type="module" src="/client.js"></script></body></html>
